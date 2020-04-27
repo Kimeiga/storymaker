@@ -1,4 +1,5 @@
-# vuefire-chat
+# Storymaker
+## Vuexfire Chat
 
 ## Project setup
 ```
