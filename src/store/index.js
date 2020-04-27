@@ -3,6 +3,8 @@ import Vuex from "vuex";
 import { vuexfireMutations, firestoreAction } from "vuexfire";
 import { db } from "../firebase/db";
 import firebase from 'firebase/app'
+import createPersistedState from 'vuex-persistedstate'
+import * as Cookies from 'js-cookie'
 
 Vue.use(Vuex);
 
@@ -52,5 +54,11 @@ export default new Vuex.Store({
     setUsername(context, payload) {
       context.commit("setUsername", payload);
     }
-  }
+  },
+
+  plugins: [
+    createPersistedState({
+        storage: window.sessionStorage,
+    })
+  ]
 });
