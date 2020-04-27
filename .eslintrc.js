@@ -21,7 +21,11 @@ module.exports = {
       'prefer-const': 2
     },
     parserOptions: {
-      parser: 'babel-eslint'
+      parser: 'babel-eslint',
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
     }
   }
   
