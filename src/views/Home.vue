@@ -1,15 +1,17 @@
 <template>
   <div>
-    <h1>Storymaker</h1>
-    <router-view />
+    <h2>Home</h2>
+    <ChatList />
   </div>
 </template>
 
 <script>
+import ChatList from '@/components/ChatList.vue'
+
 export default {
   name: 'app',
-  created: function() {
-    this.$store.dispatch("init");
+  components: {
+    ChatList
   }
 }
 </script>

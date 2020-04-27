@@ -23,7 +23,7 @@ export default new Vuex.Store({
         context.bindFirestoreRef(payload.name, payload.ref, payload.options)
     }),
     init: firestoreAction(function(context) {
-        context.bindFirestoreRef('messages', db.collection("messages"))
+        // context.bindFirestoreRef('messages', db.collection("chats"))
         context.bindFirestoreRef('chats', db.collection("chats"))
     }),
     addMessage(context, payload) {
@@ -31,6 +31,10 @@ export default new Vuex.Store({
         ...payload,
         created: firebase.firestore.FieldValue.serverTimestamp()
       });
-    }
-  },
+    },
+    bindToChat: firestoreAction(function(context, payload) {
+      // unbindFirestoreRef('messages')
+      context.bindFirestoreRef("messages", db.collection("chats").doc(payload.id).collection("messages"));
+    })
+  }
 });

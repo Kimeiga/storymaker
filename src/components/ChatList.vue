@@ -1,12 +1,14 @@
 <template>
   <div class="chat-list">
     
-    <p v-for="chat in chats" :key="chat.id">{{ chat }}</p>
+    <router-link v-for="chat in chats" :key="chat.id" :to="{ name: 'chat', params: { id:chat.id } }">
+      {{ chat }}
+    </router-link>
 
+    <hr>
     <input v-model="username" placeholder="username" />
     <input v-model="newMessageText" @keyup.enter="addMessage" placeholder="Add new message" />
     
-    <p v-for="message in messages" :key="message.id">{{message}}</p>
   </div>
 </template>
 
