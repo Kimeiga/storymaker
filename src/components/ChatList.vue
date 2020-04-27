@@ -1,14 +1,12 @@
 <template>
   <div class="chat-list">
-    
+    <h3>Chat List</h3>
     <router-link v-for="chat in chats" :key="chat.id" :to="{ name: 'chat', params: { id:chat.id } }">
       {{ chat }}
+      <br>
     </router-link>
 
-    <hr>
-    <input v-model="username" placeholder="username" />
-    <input v-model="newMessageText" @keyup.enter="addMessage" placeholder="Add new message" />
-    
+
   </div>
 </template>
 
@@ -17,11 +15,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "ChatList",
-  data: () => ({
-    newMessageText: "",
-    username: ""
-  }),
-
   methods: {
     addMessage: function() {
       if (this.newMessageText) {
