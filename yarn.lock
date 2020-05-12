@@ -2336,6 +2336,11 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
+chota@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/chota/-/chota-0.7.2.tgz#e77a91993f45dd887a988e071c5bdbc396681b90"
+  integrity sha512-Lexd5t0gMp1EdYDmaurIyh/WqGZyYYUe8dpUIwMMEzLNOr1jpLGNHLtKBnopm+RklUBkzEz24WxXiEDd77IO6Q==
+
 chownr@^1.0.1, chownr@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.4.tgz#6fc9d7b42d32a583596337666e7d08084da2cc6b"

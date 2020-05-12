@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "chota": "^0.7.2",
     "core-js": "^2.6.5",
     "firebase": "^7.14.2",
     "js-cookie": "^2.2.1",

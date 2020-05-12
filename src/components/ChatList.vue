@@ -1,12 +1,13 @@
 <template>
   <div class="chat-list">
     <h3>Chat List</h3>
-    <router-link v-for="chat in chats" :key="chat.id" :to="{ name: 'chat', params: { id:chat.id } }">
-      {{ chat }}
-      <br>
-    </router-link>
-
-
+    <div class="card" v-for="chat in chats" :key="chat.id">
+      <router-link :to="{ name: 'chat', params: { id:chat.id } }">
+        <h3>{{ chat.name }}</h3>
+        <h4>Users:</h4>
+        <p v-for="user in chat.users" :key="user">{{ user }}</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -21,10 +22,10 @@ export default {
         this.$store.dispatch("addMessage", {
           username: this.username,
           content: this.newMessageText
-        })
+        });
         this.newMessageText = "";
       }
-    },
+    }
     // updateTodoText: function(todo, newText) {
     //   todos.doc(todo.id).update({ text: newText });
     // },
@@ -41,11 +42,9 @@ export default {
     // }
   },
 
-  computed: mapState(["messages", "chats"]),
-
+  computed: mapState(["messages", "chats"])
 };
 </script>
 
 <style scoped>
-
 </style>
