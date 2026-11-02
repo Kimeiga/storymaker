@@ -1,7 +1,10 @@
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Legacy app has no Firebase Authentication flow. Default-deny all
+    // client access until authentication and scoped permissions are added.
     match /{document=**} {
-      allow read, write;
+      allow read, write: if false;
     }
   }
 }
